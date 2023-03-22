@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Changed the title -->
+    <title>POB-Patient-Orientation-Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="js" href="functions.js">
+    <!-- Added the favicon of the website -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+   
+    <div class="clock"> 
+        <h2 class="current-time"></h2>
+    </div>
+    <script>
+        let time = document.getElementsByClassName("current-time")[0];
+        setInterval(() =>{
+        let d = new Date();
+        time.innerHTML = d.toLocaleTimeString();
+        },1000)
+    </script>
+    <table>
+        <tr>
+           <td> <img class="sun-moon-icon" src="https://cdn-icons-png.flaticon.com/512/2490/2490365.png" alt=" ">
+           </td>
+           <td> <p class="greeting-text"> Good Morning!</p>
+           </td>
+        </tr>
+
+        <tr>
+          <td> <img class="calendar-icon" src="https://cdn-icons-png.flaticon.com/512/661/661553.png" alt="">
+          </td>
+          <td> <p> It is </p>
+            <p class="calendar-text"></p>
+            <script>
+                let date = document.getElementsByClassName("calendar-text")[0];
+                let m = new Date();
+                date.innerHTML = m.toLocaleDateString();
+            </script>
+          </td>
+        </tr>
+
+        <tr>
+           <td> <img class="location-icon" src="https://cdn-icons-png.flaticon.com/512/10023/10023033.png" alt="">
+           </td>
+           <td><p class="location-text">You are at the Health Sciences Centre</p>
+           </td>
+        </tr>
+
+        <tr>
+           <td><img class="nurse-icon" src="https://cdn-icons-png.flaticon.com/512/4807/4807695.png" alt="">
+           </td>
+           <td><p class="nurse-text">Your nurse for today is: Max</p>
+           </td>
+        </tr>
+
+        <tr>
+           <td><img class="weather-icon" src="https://cdn-icons-png.flaticon.com/512/2480/2480608.png" alt="">
+           </td>
+           <td><p class="weather-text">The weather is cloudy outside</p>
+           </td>
+        
+        </tr>
+
+        <tr>
+           <td><img class="news-icon" src="https://cdn-icons-png.flaticon.com/512/741/741867.png" alt="">
+           </td>
+           <td><p class="news-text"> Today's news picks</p>
+           </td>
+        </tr>
+
+    </table>
+</body>
+</html>

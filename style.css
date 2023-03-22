@@ -1,0 +1,64 @@
+
+/* Changed the colour of the background to white and added padding */
+body{
+    background-color: white;
+    margin: 0%;
+    text-align: center;
+    font-family: Comic Sans MS, Comic Sans, cursive;
+    font-size: 4rem;
+    color: #0c0664;
+    padding: 5%;
+}
+
+
+.current-time{
+    text-align: center;
+    margin: 4rem auto 4rem auto;
+    font-size: rem;
+    color: #0c0664;
+}
+
+
+.sun-moon-icon{
+    width: 50%;
+    margin: 4rem auto 4rem auto;
+}
+
+.greeting-text{
+    font-size: 6rem;
+}
+
+.calendar-icon{
+    width: 50%;
+}
+
+.calendar-text{
+color:  #0c0664
+}
+
+.location-icon{
+    width: 50%;
+}
+
+
+
+.nurse-icon{
+    width: 50%;
+
+}
+
+
+
+.weather-icon{
+    width: 50%;
+}
+
+
+
+.news-icon{
+    width: 50%;
+    
+}
+
+
+
