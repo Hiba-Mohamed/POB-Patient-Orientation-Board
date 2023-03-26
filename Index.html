@@ -7,27 +7,21 @@
     <!-- Changed the title -->
     <title>POB-Patient-Orientation-Board</title>
     <link rel="stylesheet" href="style.css">
-    <script src="functions.js"></script>
+  
     <!-- Added the favicon of the website -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
    
     <div class="clock"> 
-        <h2 class="current-time"></h2>
+        <h2 id="current-time"></h2>
     </div>
-    <script>
-        let time = document.getElementsByClassName("current-time")[0];
-        setInterval(() =>{
-        let d = new Date();
-        time.innerHTML = d.toLocaleTimeString();
-        },1000)
-    </script>
+ 
     <main>
         <nav class= flex-container>
             
            <figure>
-            <img class="sun-moon-icon" src="https://cdn-icons-png.flaticon.com/512/2490/2490365.png" alt=" ">
+            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2490/2490365.png" alt=" ">
             </figure>
         
             <article>
@@ -39,17 +33,12 @@
           <nav class= flex-container>
             
            <figure>
-            <img class="calendar-icon" src="https://cdn-icons-png.flaticon.com/512/661/661553.png" alt="">
+            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/661/661553.png" alt="">
             </figure>
         
             <article>
              <p> It is </p>
                 <p class="calendar-text"></p>
-                <script>
-                    let date = document.getElementsByClassName("calendar-text")[0];
-                    let m = new Date();
-                    date.innerHTML = m.toLocaleDateString();
-                </script>
             </article>
             
         </nav>
@@ -57,7 +46,7 @@
          <nav class= flex-container>
             
            <figure>
-            <img class="location-icon" src="https://cdn-icons-png.flaticon.com/512/10023/10023033.png" alt="">
+            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/10023/10023033.png" alt="">
             </figure>
         
             <article>
@@ -69,7 +58,7 @@
          <nav class= flex-container>
             
            <figure>
-            <img class="nurse-icon" src="https://cdn-icons-png.flaticon.com/512/4807/4807695.png" alt="">
+            <img class="icon"src="https://cdn-icons-png.flaticon.com/512/4807/4807695.png" alt="">
             </figure>
         
             <article>
@@ -81,7 +70,7 @@
          <nav class= flex-container>
             
            <figure>
-            <img class="weather-icon" src="https://cdn-icons-png.flaticon.com/512/2480/2480608.png" alt="">
+            <img class="icon" src="https://cdn-icons-png.flaticon.com/512/2480/2480608.png" alt="">
             </figure>
         
             <article>
@@ -93,7 +82,7 @@
          <nav class= flex-container>
             
            <figure>
-            <img class="news-icon" src="https://cdn-icons-png.flaticon.com/512/741/741867.png" alt="">
+            <img class="icon"src="https://cdn-icons-png.flaticon.com/512/741/741867.png" alt="">
             </figure>
         
             <article>
@@ -102,5 +91,6 @@
             
         </nav>
     </main>
+    <script src="functions.js"></script>
 </body>
 </html>

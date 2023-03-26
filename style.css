@@ -3,16 +3,18 @@
 body{
     background-color: white;
     margin: 0%;
-    text-align: center;
     font-family: Comic Sans MS, Comic Sans, cursive;
-    font-size: 4rem;
+    font-size: 6rem;
+    text-align: center;
     color: #0c0664;
     padding: 5%;
 }
 
-.flex-container {
+.flex-container{
     display: flex;
-  }
+    align-content: space-evenly;
+    flex-direction: row;
+}
 
 .current-time{
     text-align: center;
@@ -21,47 +23,25 @@ body{
     color: #0c0664;
 }
 
+p{
+  text-align: start;
+   padding: 5%;
 
-.sun-moon-icon{
-    width: 50%;
-    margin: 4rem auto 4rem auto;
 }
+
 
 .greeting-text{
     font-size: 6rem;
 }
 
-.calendar-icon{
-    width: 50%;
-}
 
 .calendar-text{
 color:  #0c0664
 }
 
-.location-icon{
-    width: 50%;
+
+.icon{
+    padding: 5%;
+    width: 80%;
+  
 }
-
-
-
-.nurse-icon{
-    width: 50%;
-
-}
-
-
-
-.weather-icon{
-    width: 50%;
-}
-
-
-
-.news-icon{
-    width: 50%;
-    
-}
-
-
-
