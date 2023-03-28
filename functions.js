@@ -1,68 +1,72 @@
+// Declare variables from the html document
+const current_time      = document.getElementById('current-time');
+const greeting_message = document.getElementsByClassName('greeting-text')[0];
+const calendar_display  = document.getElementById("calendar-text");
+
+
+const date = new Date();
+let hours = date.getHours();
+let minutes = date.getMinutes();
+let seconds = date.getSeconds();
+
+console.log(typeof(hours));
+
 function clock()
 {
-    var date = new Date();
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var seconds = date.getSeconds();
-    var midday;
+    let AM_PM;
     
-    hours = updateTime(hours);
-    minutes = updateTime(minutes); 
-    seconds = updateTime(seconds);
+    // hours = updateTime(hours);
+    // minutes = updateTime(minutes); 
+    // seconds = updateTime(seconds);
 
     // making the greeting message say "good morning!" from 6am until 1pm
 
-    midday = (hours >=12) ?"PM" : "AM";
-    document.getElementById("current-time").innerHTML = hours + ":" + minutes + ":" + seconds + midday
+    AM_PM = ( hours >= 12 ) ? "PM" : "AM";
+    current_time.innerHTML = `${hours}:${minutes}:${seconds} ${AM_PM}`;
 
-    var time = setTimeout(function(){
-        clock();
-    }, 1000);
+    setTimeout(() => {clock()}, 1000);
 }
 
-if( hours < 12)
+if ( hours < 12 )
 {
-    var greeting = "Good Morning";
+    greeting_message.innerHTML = "Good Morning";
 }
 
-if(hours >+ 12 && hours <=18)
+if( hours >= 12 && hours <= 18 )
 {
-    var greeting = "Good Afternoon";
+    greeting_message.innerHTML = "Good Afternoon";
+}
 
-    if(hours >= 18 && hours <= 24)
+if( hours >= 18 && hours <= 24 )
+{
+    greeting_message.innerHTML = "good evening";
+}
+// current_value is a number
+function updateTime(current_value)
+{
+    // instead of checking based on numeric value, 
+    // we should check based on number of characters
+    // ie. instead of 1 < 10 => '01', 
+    // if (String(current_value).length < 2 => 01
+    if ( current_value < 10 )
     {
-        var greeting = "good evening";
-    }
-}
-
-function updateTime(k)
-{
-    if(k <10)
-    {
-        return "0" + k
+        const value = '0' + current_value;
+        console.log(typeof(value));
+        return value
     } else 
     {
-        return k;
+        return current_value;
     }
 }
 
-clock();
-
     // creating date function
-function date()
+function updateCalendar()
 {
-    let date = document.getElementsByClassName("calendar-text")[0];
-    let m = new Date();
-    date.innerHTML = m.toLocaleDateString();
+    const new_date = new Date();
+    calendar_display.innerHTML = new_date.toLocaleDateString();
+    // setTimeout(updateCalendar(), 1000);
 }
 
 // calling date function
-date();
-
-//  getting the name of the day of the week displayed in the date
-
-
-// getting the name of the month of the year displayed in the date
-
-
- 
+clock();
+updateCalendar();
