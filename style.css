@@ -1,47 +1,45 @@
 
-/* Changed the colour of the background to white and added padding */
 body{
     background-color: white;
     margin: 0%;
     font-family: Comic Sans MS, Comic Sans, cursive;
-    font-size: 6rem;
     text-align: center;
     color: #0c0664;
-    padding: 5%;
+ 
 }
-
-.flex-container{
-    display: flex;
-    align-content: space-evenly;
-    flex-direction: row;
-}
-
-.current-time{
+h2{
     text-align: center;
     margin: 4rem auto 4rem auto;
-    font-size: rem;
+    font-size: xx-large;
+   font-size: 4rem;
     color: #0c0664;
+}
+
+#parent-container{
+    display: inline-block;
+    justify-content: flex-start;
+    align-items: start;
+ 
+}
+
+img{
+    width: 15%;
+    float: left;
+    padding: 20px;
+    padding-bottom: 60px;   
+ 
+}
+
+article{
+  
+    padding: 3%;
+   flex-grow: 1;
 }
 
 p{
-  text-align: start;
-   padding: 5%;
-
+    color: #04435A;
+    line-height: 1.5;
+    font-size:xx-large;
+    text-align: start;
 }
 
-
-.greeting-text{
-    font-size: 6rem;
-}
-
-
-.calendar-text{
-color:  #0c0664
-}
-
-
-.icon{
-    padding: 5%;
-    width: 80%;
-  
-}
