@@ -43,3 +43,11 @@ p{
     text-align: start;
 }
 
+.flex-container{
+display: flex;
+align-items: start;
+justify-content: center;
+justify-content: space-around;
+
+}
+
