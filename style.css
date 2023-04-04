@@ -23,17 +23,24 @@ h2{
 }
 
 img{
-    width: 15%;
-    float: left;
+    width: 120px;
+    /* float: left; */
     padding: 20px;
-    padding-bottom: 60px;   
- 
+    margin-left: 40px;
 }
 
+/* figure, .pic{
+    flex-basis: 1
+} */
+
 article{
-  
     padding: 3%;
-   flex-grow: 1;
+    /* flex-grow: 2; */
+}
+
+article, .text{
+    /* flex-basis: 1; */
+    flex-grow: 2;
 }
 
 p{
@@ -44,10 +51,11 @@ p{
 }
 
 .flex-container{
-display: flex;
-align-items: start;
-justify-content: center;
-justify-content: space-around;
-
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    justify-content: space-around;
+    padding-bottom: 60px;   
+    width: 100vw;
 }
 
