@@ -4,15 +4,16 @@ body{
     margin: 0%;
     font-family: Comic Sans MS, Comic Sans, cursive;
     text-align: center;
-    color: #0c0664;
+    color: #04435A;
+
  
 }
-h2{
+.clock {
     text-align: center;
     margin: 4rem auto 4rem auto;
     font-size: xx-large;
    font-size: 4rem;
-    color: #0c0664;
+    color: #04435A;
 }
 
 #parent-container{
