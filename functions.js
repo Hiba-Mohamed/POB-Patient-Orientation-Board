@@ -10,8 +10,10 @@ const hours            = document.getElementById('hours');
 const minutes          = document.getElementById('minutes');
 const seconds          = document.getElementById('seconds');
 const greeting_message = document.getElementById('greeting-text');
+const calendar_text    = document.getElementById('calendar-text');
+const clock_text       = document.getElementById('clock');
 
-console.log(session);
+
 
 // Watch out for global scope vs block scope here... You are declaring a function
 // that just declares local variables and completes without doing anything
@@ -21,32 +23,74 @@ function displayTime()
     var hours        = dateTime.getHours();
     var minutes      = dateTime.getMinutes();
     var seconds      = dateTime.getSeconds();
+
+    const new_date = new Date();
+    clock_text.innerHTML = new_date.toLocaleTimeString();
+
+    // adding zero infront of the numbers below 10
+    let current_value
+    if (String(current_value).length < 2)
+    {
+        const value = '0' + current_value;
+        console.log(typeof(value));
+        return value
+    } 
+    else 
+    {
+        return current_value;
+    }
+
+    if (hours < 12)
+     {
+        setAttribute(greeting_message.innerHTML, "good night")
+     }
+
+    // // changing the greeeting message with time change
+    // if ( hours < 12 )
+    // {
+    //    
+    //     // greeting_message.innerHTML = "Good Morning";
+    // }
+    
+    // if( hours >= 12 && hours <= 18 )
+    // {
+    //     greeting_message.innerHTML = "Good Afternoon";
+    // }
+    
+    // if( hours >= 18 && hours <= 24 )
+    // {
+    //     greeting_message.innerHTML = "good evening";
+    // }
+
  }
+
+//  calling the displayTime function
+ displayTime();
+
+ function updateCalendar()
+{
+    const new_date = new Date();
+    calendar_text.innerHTML = new_date.toLocaleDateString();
+}
+
+// calling date function
+
+updateCalendar();
 
  // If you are trying to get your functions working but not seeing anything happening
  // you can try invoking the function in a console log to see what it's return is
- displayTime() 
+
 //  console.log(displayTime())
 // In this case, the function isn't doing any work or modifying the DOM in any way
 
 // Again, watch out for how you are declaring variables here.. This may work fine but it is bad practice
 // We should always explicitly define wether a variable is mutable (let) or immutable (const)
- AM_PM = ( hours >= 12 ) ? session.innerHTML = "PM": session.innerHTML= "AM";
+  const AM_PM = ( hours >= 12 ) ? session.innerHTML = "PM": session.innerHTML= "AM";
 
 
  // we are delcaring this if statement in the global scope so the return value isn't being stored anywhere
  // This is what is causing your console error for 'Illegal Return Statement"
  //  current_value is a number
- if (String(current_value).length < 2)
-     {
-         const value = '0' + current_value;
-         console.log(typeof(value));
-         return value
-     } 
-     else 
-     {
-         return current_value;
-     }
 
 //  function updateTime(current_value)
 //  {
@@ -54,32 +98,10 @@ function displayTime()
 //  }
 
 
- if ( hours < 12 )
- {
-     greeting_message.innerHTML = "Good Morning";
- }
- 
- if( hours >= 12 && hours <= 18 )
- {
-     greeting_message.innerHTML = "Good Afternoon";
- }
- 
- if( hours >= 18 && hours <= 24 )
- {
-     greeting_message.innerHTML = "good evening";
- }
+
 
      // creating date function
-function updateCalendar()
-{
-    const new_date = new Date();
-    calendar_display.innerHTML = new_date.toLocaleDateString();
-    // setTimeout(updateCalendar(), 1000);
-}
 
-// calling date function
-displayTime();
-updateCalendar();
 
 
 // // Declare variables from the html document

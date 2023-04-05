@@ -8,7 +8,7 @@ body{
 
  
 }
-.clock {
+#clock {
     text-align: center;
     margin: 4rem auto 4rem auto;
     font-size: xx-large;
