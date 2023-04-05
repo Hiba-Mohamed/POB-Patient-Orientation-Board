@@ -24,10 +24,15 @@ function displayTime()
     var minutes      = dateTime.getMinutes();
     var seconds      = dateTime.getSeconds();
 
-    const new_date = new Date();
-    clock_text.innerHTML = new_date.toLocaleTimeString();
-
+    function liveClock ()
+     {
+        const new_date = new Date();
+        clock_text.innerHTML = new_date.toLocaleTimeString();
+     }
+     setInterval(liveClock, 1000);
+     
     // adding zero infront of the numbers below 10
+    
     let current_value
     if (String(current_value).length < 2)
     {
