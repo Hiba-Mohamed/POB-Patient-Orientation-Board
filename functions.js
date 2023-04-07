@@ -30,6 +30,21 @@ function displayTime()
  }
  setInterval(displayTime, 1000);
 
+ function displayGreeting() {
+    var now = new Date();
+    var hour = now.getHours();
+    var greeting = '';
+    if (hour < 12) {
+      greeting = 'Good morning!';
+    } else if (hour < 18) {
+      greeting = 'Good afternoon!';
+    } else {
+      greeting = 'Good evening!';
+    }
+    greeting_message.innerHTML = greeting;
+  }
+displayGreeting();
+
  function updateCalendar()
 {
     const new_date = new Date();
