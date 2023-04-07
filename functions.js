@@ -30,7 +30,8 @@ function displayTime()
  }
  setInterval(displayTime, 1000);
 
- function displayGreeting() {
+ function displayGreeting() 
+ {
     var now = new Date();
     var hour = now.getHours();
     var greeting = '';
@@ -45,9 +46,10 @@ function displayTime()
   }
 displayGreeting();
 
-function displayFullDate() {
-  var now = new Date();
-  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+function displayFullDate() 
+{
+  var now      = new Date();
+  var options  = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   var fullDate = now.toLocaleDateString('en-US', options);
   calendar_text.innerHTML = fullDate;
 }
