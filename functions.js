@@ -45,12 +45,13 @@ function displayTime()
   }
 displayGreeting();
 
- function updateCalendar()
-{
-    const new_date = new Date();
-    calendar_text.innerHTML = new_date.toLocaleDateString();
+function displayFullDate() {
+  var now = new Date();
+  var options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  var fullDate = now.toLocaleDateString('en-US', options);
+  calendar_text.innerHTML = fullDate;
 }
-updateCalendar();
+displayFullDate();
 
  // If you are trying to get your functions working but not seeing anything happening
  // you can try invoking the function in a console log to see what it's return is
