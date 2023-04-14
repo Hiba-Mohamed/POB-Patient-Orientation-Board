@@ -89,10 +89,10 @@ function displayWeather(weather)
   const descriptionElement = document.querySelector('#description');
   const iconElement = document.querySelector('#icon');
   
-  cityElement.textContent = weather.city;
-  temperatureElement.textContent = `${weather.temperature} °C`;
-  descriptionElement.textContent = weather.description;
-  iconElement.src = weather.icon;
+  const city = cityElement.textContent = weather.city;
+  const temp = temperatureElement.textContent = `${weather.temperature} °C`;
+  const descrip =descriptionElement.textContent = weather.description;
+  const icon = iconElement.src = weather.icon;
  }
 
 getWeather();
