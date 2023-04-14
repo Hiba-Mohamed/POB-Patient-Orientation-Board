@@ -57,3 +57,42 @@ displayFullDate();
 
  // If you are trying to get your functions working but not seeing anything happening
  // you can try invoking the function in a console log to see what it's return is
+
+
+// Displaying current weather in St. John's
+
+const apiKey = '6709839139cea574a4a89f226865fbd8';
+
+function getWeather() 
+{
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent("St. John's")}&units=metric&appid=6709839139cea574a4a89f226865fbd8`)
+  .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      const weather = {
+        city: data.name,
+        temperature: data.main.temp,
+        description: data.weather[0].description,
+        icon: `https://openweathermap.org/img/wn/${data.weather[0].icon}.png`
+      };
+      displayWeather(weather);
+    })
+    .catch(error => {
+      console.log(error);
+    });
+}
+
+function displayWeather(weather)
+ {
+  const cityElement = document.querySelector('#city');
+  const temperatureElement = document.querySelector('#temperature');
+  const descriptionElement = document.querySelector('#description');
+  const iconElement = document.querySelector('#icon');
+  
+  cityElement.textContent = weather.city;
+  temperatureElement.textContent = `${weather.temperature} °C`;
+  descriptionElement.textContent = weather.description;
+  iconElement.src = weather.icon;
+ }
+
+getWeather();
