@@ -65,7 +65,7 @@ const apiKey = '6709839139cea574a4a89f226865fbd8';
 
 function getWeather() 
 {
-  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent("St. John's")}&units=metric&appid=6709839139cea574a4a89f226865fbd8`)
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=St.%20John%27s,CA&units=metric&appid=6709839139cea574a4a89f226865fbd8`)
   .then(response => response.json())
     .then(data => {
       console.log(data);
@@ -89,10 +89,10 @@ function displayWeather(weather)
   const descriptionElement = document.querySelector('#description');
   const iconElement = document.querySelector('#icon');
   
-  const city = cityElement.textContent = weather.city;
-  const temp = temperatureElement.textContent = `${weather.temperature} °C`;
-  const descrip =descriptionElement.textContent = weather.description;
-  const icon = iconElement.src = weather.icon;
+  const city    = cityElement.textContent = `${weather.city} weather`;
+  const temp    = temperatureElement.textContent = `${weather.temperature} °C`;
+  const descrip = descriptionElement.textContent = weather.description;
+  const icon    = iconElement.src = `${weather.icon}`;
  }
 
 getWeather();
