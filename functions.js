@@ -80,7 +80,6 @@ function getWeather()
     .catch(error => {
       console.log(error);
     });
-    setInterval(getWeather, 30000);
 }
 
 function displayWeather(weather)
