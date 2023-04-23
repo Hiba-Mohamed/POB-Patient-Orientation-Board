@@ -96,3 +96,38 @@ function displayWeather(weather)
  }
 
 getWeather();
+
+const newsApiKey = '0ce5a2833c5544a28e948407f3045f95';
+const newsElement = document.getElementById('news-text');
+
+function getNews() 
+{
+  fetch(`https://newsapi.org/v2/top-headlines?country=ca&apiKey=${newsApiKey}`)
+    .then(response => response.json())
+    .then(data => 
+    {
+      if (!data || !data.articles || data.articles.length === 0) 
+      {
+        throw new Error('Invalid API response');
+      }
+      const articles = data.articles;
+      const randomIndex = Math.floor(Math.random() * articles.length);
+      const news = articles[randomIndex].title;
+      console.log(news);
+      newsElement.textContent = news;
+    })
+    .catch(error => {
+      console.log(error);
+    });
+    
+}
+
+getNews();
+setInterval(getNews, 600000);
+
+
+
+
+
+
+
