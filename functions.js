@@ -80,19 +80,20 @@ function getWeather()
     .catch(error => {
       console.log(error);
     });
+    setInterval(getWeather, 30000);
 }
 
 function displayWeather(weather)
  {
-  const cityElement = document.querySelector('#city');
+  const cityElement        = document.querySelector('#city');
   const temperatureElement = document.querySelector('#temperature');
   const descriptionElement = document.querySelector('#description');
-  const iconElement = document.querySelector('#icon');
+  const iconElement        = document.querySelector('#icon');
   
   const city    = cityElement.textContent = `${weather.city} weather`;
   const temp    = temperatureElement.textContent = `${weather.temperature} °C`;
   const descrip = descriptionElement.textContent = weather.description;
-  const icon    = iconElement.src = `${weather.icon}`;
+  const icon    = iconElement.src = `https://openweathermap.org/img/wn/"${weather.icon}".png`;
  }
 
 getWeather();
