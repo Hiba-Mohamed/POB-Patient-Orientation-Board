@@ -25,21 +25,21 @@ const nurse_code       = document.getElementById('nurse_code')
 // Displaying live clock on the top of the page
 function displayTime() 
  {
-      var dateTime = new Date();
-      var hours = dateTime.getHours().toString().padStart(2, '0');
-      var minutes = dateTime.getMinutes().toString().padStart(2, '0');
-      var seconds = dateTime.getSeconds().toString().padStart(2, '0');
-      var amOrPm = (hours >= 12) ? 'PM' : 'AM';
-      var timeString = hours + ':' + minutes + ':' + seconds + ' ' + amOrPm;
+      const dateTime = new Date();
+      const hours = dateTime.getHours().toString().padStart(2, '0');
+      const minutes = dateTime.getMinutes().toString().padStart(2, '0');
+      const seconds = dateTime.getSeconds().toString().padStart(2, '0');
+      const amOrPm = (hours >= 12) ? 'PM' : 'AM';
+      const timeString = hours + ':' + minutes + ':' + seconds + ' ' + amOrPm;
      clock_text.innerHTML = timeString;
  }
  setInterval(displayTime, 1000);
 
  function displayGreeting() 
  {
-    var now = new Date();
-    var hour = now.getHours();
-    var greeting = '';
+    const now = new Date();
+    const hour = now.getHours();
+    let greeting = '';
     if (hour < 12) {
       greeting = 'Good morning!';
     } else if (hour < 18) {
@@ -53,9 +53,9 @@ displayGreeting();
 
 function displayFullDate() 
 {
-  var now      = new Date();
-  var options  = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  var fullDate = now.toLocaleDateString('en-US', options);
+  const now      = new Date();
+  const options  = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const fullDate = now.toLocaleDateString('en-US', options);
   calendar_text.innerHTML = fullDate;
 }
 displayFullDate();
