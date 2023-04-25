@@ -13,6 +13,11 @@ const greeting_message = document.getElementById('greeting-text');
 const calendar_text    = document.getElementById('calendar-text');
 const clock_text       = document.getElementById('clock');
 
+const nurse_name       = document.getElementById('nurse_name')
+const nurse_break      = document.getElementById('nurse_break')
+const nurse_code       = document.getElementById('nurse_code')
+
+
 
 // Watch out for global scope vs block scope here... You are declaring a function
 // that just declares local variables and completes without doing anything
@@ -96,6 +101,71 @@ function displayWeather(weather)
  }
 
 getWeather();
+
+// Factory pattern
+// const createNurse = (name, tasks, patients) =>
+const createNurse = (name, break_time, code) =>
+{
+  const nurse_info = {
+    name,
+    break_time,
+    code
+  }
+
+  return {
+    nurse_info,
+    review_info: () => {
+      console.log(nurse_info)
+    },
+    register: () => {
+      localStorage.setItem(nurse_info.name, JSON.stringify(nurse_info))
+    }
+  }
+}
+
+// // called the factorty pattern to initialize a new nurse object
+// const hiba_mohammed = createNurse(
+//   'Hiba Mohammed',
+//   {
+//     'check_medecine': 'Check stock on all medications in RM 413',
+//     'create_schedule': 'Create schedule for the next shift',
+//     'update_fire_code': 'Ensure all relevant fire codes are up to date for the current shift'
+//   },
+//   {
+//     'Clark Oake': {room: 'RM413', condition: 'stable', vitals: {heart_rate: 90, weight: 180}},
+//     'Jan Mertlik': {room: 'RM415', condition: 'stable', vitals: {heart_rate: 90, weight: 180}},
+//     'Sahand Seifi': {room: 'RM413', condition: 'stable', vitals: {heart_rate: 90, weight: 180}},
+//   }
+// );
+
+// used the created nurse object to call factory methods
+// hiba_mohammed.review_info();
+// hiba_mohammed.register();
+
+// retrieved stored JSON data from localStorage
+const retrieveNurseFromStorage = (nurse_name) => {
+
+  const nurse_info = JSON.parse(localStorage.getItem(nurse_name))
+
+  console.log(nurse_info)
+
+  return nurse_info
+}
+
+// Handle the submission of a new nurse creation form
+const handleNurseSubmit = (e) => {
+  e.preventDefault()
+
+  const new_nurse = createNurse(nurse_name.value, nurse_break.value, nurse_code.value)
+
+  new_nurse.register();
+  console.log(new_nurse.nurse_info);
+}
+
+retrieveNurseFromStorage('Clark');
+
+
+
 
 const newsApiKey = '0ce5a2833c5544a28e948407f3045f95';
 const newsElement = document.getElementById('news-text');
